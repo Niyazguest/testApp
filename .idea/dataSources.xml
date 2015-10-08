@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3002893769">
+    <data-source source="LOCAL" name="hibernate.cfg.xml" uuid="023af1e3-7182-4684-831e-eb52a7eafd22">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/test</jdbc-url>
+      <user-name>postgres</user-name>
+      <user-password>df9bdf98df99df9edf9f</user-password>
+      <libraries>
+        <library>
+          <url>file://C:\Users\user\.m2\repository\org\postgresql\postgresql\9.3-1103-jdbc41\postgresql-9.3-1103-jdbc41.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="ru:niyaz:test:hibernate.cfg.xml" uuid="f91df66b-46eb-41cf-a031-826118464d9a">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/test</jdbc-url>
+      <user-name>postgres</user-name>
+      <user-password>df9bdf98df99df9edf9f</user-password>
+      <libraries>
+        <library>
+          <url>file://C:\Users\user\.m2\repository\org\postgresql\postgresql\9.3-1103-jdbc41\postgresql-9.3-1103-jdbc41.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="ru:niyaz:test:util:hibernate.cfg.xml" uuid="01fdec9c-d2f0-4a4c-af6d-bc56f6078432">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/test</jdbc-url>
+      <user-name>postgres</user-name>
+      <user-password>df9bdf98df99df9edf9f</user-password>
+      <libraries>
+        <library>
+          <url>file://C:\Users\user\.m2\repository\org\postgresql\postgresql\9.3-1103-jdbc41\postgresql-9.3-1103-jdbc41.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="id1" uuid="2d281008-e0c7-4567-86cd-7091f5b81a54">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/test</jdbc-url>
+      <user-name>postgres</user-name>
+      <user-password>df9bdf98df99df9edf9f</user-password>
+      <libraries>
+        <library>
+          <url>file://C:\Users\user\.m2\repository\org\postgresql\postgresql\9.3-1103-jdbc41\postgresql-9.3-1103-jdbc41.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+

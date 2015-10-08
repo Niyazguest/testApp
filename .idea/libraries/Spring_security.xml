@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Spring security" type="spring-security">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.0.2.RELEASE/spring-security-core-4.0.2.RELEASE.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/4.0.2.RELEASE/spring-security-config-4.0.2.RELEASE.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-acl/3.0.6.RELEASE/spring-security-acl-3.0.6.RELEASE.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.0.2.RELEASE/spring-security-web-4.0.2.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
