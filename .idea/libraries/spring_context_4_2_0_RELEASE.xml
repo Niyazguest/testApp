@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="spring-context-4.2.0.RELEASE">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.2.0.RELEASE/spring-context-4.2.0.RELEASE.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
