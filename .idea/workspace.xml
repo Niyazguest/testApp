@@ -249,7 +249,7 @@
       <file leaf-file-name="tasks.jsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/tasks.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="19" selection-start="1946" selection-end="1946" vertical-scroll-proportion="0.21451104" vertical-offset="442" max-vertical-offset="1717">
+            <state line="36" column="50" selection-start="2056" selection-end="2056" vertical-scroll-proportion="0.85804415" vertical-offset="340" max-vertical-offset="1717">
               <folding />
             </state>
           </provider>
@@ -1503,12 +1503,12 @@
       <updated>1441304261634</updated>
       <workItem from="1441304266510" duration="70379000" />
       <workItem from="1443891090523" duration="85000" />
-      <workItem from="1443891487150" duration="46722000" />
+      <workItem from="1443891487150" duration="46730000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="320116000" />
+    <option name="totallyTimeSpent" value="320124000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1532,7 +1532,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1554,7 +1554,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13293052" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13293052" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18731117" sideWeight="0.49878347" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3425775" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -2027,7 +2027,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/tasks.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="19" selection-start="1946" selection-end="1946" vertical-scroll-proportion="0.21451104" vertical-offset="442" max-vertical-offset="1717">
+        <state line="36" column="50" selection-start="2056" selection-end="2056" vertical-scroll-proportion="0.85804415" vertical-offset="340" max-vertical-offset="1717">
           <folding />
         </state>
       </provider>
