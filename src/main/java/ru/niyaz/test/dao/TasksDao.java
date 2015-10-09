@@ -59,21 +59,11 @@ public class TasksDao {
         try {
             User currentUser = ((UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getCurrentUser();
             Session session = sessionFactory.getCurrentSession();
-            Criteria criteria = session.createCriteria(Tasks.class);
-            criteria.add(Restrictions.eq("taskId", taskId));
-       //     Tasks task = (Tasks) criteria.uniqueResult();
-                 Tasks task = (Tasks) session.load(Tasks.class, taskId);
-            //     currentUser = (User) session.merge(currentUser);
-            //     currentUser.getTasks().remove(task);
-            //     task.setUser(null);
+            Tasks task = (Tasks) session.load(Tasks.class, taskId);
             task.setUser(null);
             task.setPriority(null);
             task.setType(null);
             session.delete(task);
-            //    session.saveOrUpdate(currentUser);
-       //     Query query = session.createQuery("delete Tasks where taskId = :id");
-       //     query.setParameter("id", taskId);
-       //     int result = query.executeUpdate();
         } catch (Exception ex) {
             return false;
         }
