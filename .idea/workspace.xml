@@ -249,7 +249,7 @@
       <file leaf-file-name="tasks.jsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/tasks.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="50" selection-start="2056" selection-end="2056" vertical-scroll-proportion="0.85804415" vertical-offset="340" max-vertical-offset="1717">
+            <state line="25" column="12" selection-start="1536" selection-end="1536" vertical-scroll-proportion="0.2681388" vertical-offset="340" max-vertical-offset="1717">
               <folding />
             </state>
           </provider>
@@ -1503,12 +1503,12 @@
       <updated>1441304261634</updated>
       <workItem from="1441304266510" duration="70379000" />
       <workItem from="1443891090523" duration="85000" />
-      <workItem from="1443891487150" duration="46730000" />
+      <workItem from="1443891487150" duration="47328000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="320124000" />
+    <option name="totallyTimeSpent" value="320722000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -2027,7 +2027,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/tasks.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="50" selection-start="2056" selection-end="2056" vertical-scroll-proportion="0.85804415" vertical-offset="340" max-vertical-offset="1717">
+        <state line="25" column="12" selection-start="1536" selection-end="1536" vertical-scroll-proportion="0.2681388" vertical-offset="340" max-vertical-offset="1717">
           <folding />
         </state>
       </provider>
