@@ -88,11 +88,6 @@
                 </tbody>
             </table>
             <button id="addBtn" type="button" onclick="addTask()" class="btn btn-primary">Добавить</button>
-
-            <div id="vk_comments">
-
-            </div>
-
         </div>
     </div>
 </div>
