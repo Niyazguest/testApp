@@ -17,7 +17,6 @@
     <context:annotation-config/>
     <context:component-scan base-package="ru.niyaz.test.serivce"/>
     <context:component-scan base-package="ru.niyaz.test.dao"/>
-    <!--<context:component-scan base-package="ru.niyaz.test.util"/>-->
     <context:component-scan base-package="ru.niyaz.test.security"/>
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">

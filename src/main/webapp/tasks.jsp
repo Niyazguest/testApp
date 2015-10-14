@@ -16,13 +16,14 @@
     <script src="<%= request.getContextPath() %>/resources/bootstrap-3.3.5-dist/js/bootstrap.min.js"
             type="text/javascript"></script>
     <script src="<%= request.getContextPath() %>/resources/js/scripts.js" type="text/javascript"></script>
+    <script type="text/javascript" src="//vk.com/js/api/openapi.js?117"></script>
     <% ServletContext servletContext = request.getSession().getServletContext(); %>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #1a81b4" role="navigation">
     <div class="container">
         <div class="navbar-header" style="width: 100%;">
-            <div class="navbar-brand" style="color: white;"><%= servletContext.getAttribute("userName")%>
+            <div class="navbar-brand"id="userName" style="color: white;"><%= servletContext.getAttribute("userName")%>
             </div>
             <c:url var="logoutUrl" value="/logout"/>
             <a class="navbar-brand" href="#" onclick="$('#logout').submit()" style="color: #d4d4d4; position: relative; left: 90%;">Выйти</a>
@@ -73,7 +74,7 @@
                         out.println("</select></td>");
                         out.println("<td style=\"height:100px; width:10%;\" class=\"tPriority\"><select name=\"priority\">");
                         for (Priority priority : priorities) {
-                            out.println("<option value=\"" + priority.getPriorityId() + "\">");
+                            out.println("<option value=\"" + priority.getPriorityId() + "\"" + ((priority.getPriorityId() == priorityId) ? " selected" : "") + ">");
                             out.print(priority.getName());
                             out.println("</option>");
                         }
@@ -87,6 +88,11 @@
                 </tbody>
             </table>
             <button id="addBtn" type="button" onclick="addTask()" class="btn btn-primary">Добавить</button>
+
+            <div id="vk_comments">
+
+            </div>
+
         </div>
     </div>
 </div>
