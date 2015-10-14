@@ -83,7 +83,6 @@
                                 "<button type=\"button\" class=\"btn btn-info btn-sm del\">Удалить</button>" + "</td>");
                         out.println("</tr>");
                     }
-
                 %>
                 </tbody>
             </table>
