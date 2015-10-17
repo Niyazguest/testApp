@@ -40,7 +40,7 @@ public class Priority {
         this.name = name;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     public List<Tasks> getTasks() {
         return tasks;
     }
