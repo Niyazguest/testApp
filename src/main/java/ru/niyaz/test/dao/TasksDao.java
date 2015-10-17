@@ -19,6 +19,7 @@ import ru.niyaz.test.security.UserDetailsImpl;
 import ru.niyaz.test.util.HibernateUtil;
 
 import org.hibernate.Query;
+
 import java.util.List;
 
 /**
@@ -59,10 +60,8 @@ public class TasksDao {
         try {
             User currentUser = ((UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getCurrentUser();
             Session session = sessionFactory.getCurrentSession();
-            Tasks task = (Tasks) session.load(Tasks.class, taskId);
-            task.setUser(null);
-            task.setPriority(null);
-            task.setType(null);
+            Tasks task = new Tasks();
+            task.setTaskId(taskId);
             session.delete(task);
         } catch (Exception ex) {
             return false;
