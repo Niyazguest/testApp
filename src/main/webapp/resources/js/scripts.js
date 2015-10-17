@@ -81,10 +81,10 @@ function addTask() {
         ' </tr>');
 
     if (number > 1) {
-        var typeElem = $('.task').eq(0).children('td.tType').children('select');
+        var typeElem = $('.task').eq(0).children('td.tType').html();
         $('tr[data-num=' + number.toString() + ']>td.tType').append(typeElem);
-        typeElem = $('.task').eq(0).children('td.tPriority').children('select');
-        $('tr[data-num=' + number.toString() + ']>td.tPriority').append(typeElem);
+        var priorityElem = $('.task').eq(0).children('td.tPriority').html();
+        $('tr[data-num=' + number.toString() + ']>td.tPriority').append(priorityElem);
     } else {
         setSelectDataFromServer('getTypes', 'type', 'tType', number.toString());
         setSelectDataFromServer('getPriorities', 'priority', 'tPriority', number.toString());
