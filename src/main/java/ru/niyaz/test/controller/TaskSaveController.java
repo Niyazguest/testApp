@@ -11,8 +11,6 @@ import ru.niyaz.test.dao.TypeDao;
 import ru.niyaz.test.entity.Tasks;
 import ru.niyaz.test.pojo.TaskObject;
 import ru.niyaz.test.serivce.TasksService;
-import ru.niyaz.test.util.TransactionConfig;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.Date;
