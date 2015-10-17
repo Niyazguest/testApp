@@ -17,8 +17,8 @@ import ru.niyaz.test.entity.Tasks;
 import ru.niyaz.test.entity.User;
 import ru.niyaz.test.security.UserDetailsImpl;
 import ru.niyaz.test.util.HibernateUtil;
-
 import org.hibernate.Query;
+
 import java.util.List;
 
 /**
@@ -59,11 +59,16 @@ public class TasksDao {
         try {
             User currentUser = ((UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getCurrentUser();
             Session session = sessionFactory.getCurrentSession();
-            Tasks task = (Tasks) session.load(Tasks.class, taskId);
-            task.setUser(null);
-            task.setPriority(null);
-            task.setType(null);
-            session.delete(task);
+            User user = (User) session.merge(currentUser);
+            user.getTasks().removeIf((Tasks e) -> {
+                if (e.getTaskId() == taskId) {
+                    e.setType(null);
+                    e.setPriority(null);
+                    e.setUser(null);
+                    return true;
+                } else
+                    return false;
+            });
         } catch (Exception ex) {
             return false;
         }
