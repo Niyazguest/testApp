@@ -14,10 +14,6 @@ public class Type {
     private String name;
     private List<Tasks> tasks;
 
-    public Type() {
-        this.name = "";
-    }
-
     @Id
     @SequenceGenerator(name = "type_seq", sequenceName = "type_type_id_seq", allocationSize = 0)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "type_seq")
@@ -39,7 +35,7 @@ public class Type {
         this.name = name;
     }
 
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "type")
     public List<Tasks> getTasks() {
         return tasks;
     }

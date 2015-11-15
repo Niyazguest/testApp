@@ -40,9 +40,10 @@ public class TasksDao {
         try {
             User user = userDao.getUser(userName);
             Session session = sessionFactory.openSession();
-            user = (User) session.merge(user);
+            session.beginTransaction();
+            session.refresh(user);
             tasksList = user.getTasks();
-            session.close();
+            session.getTransaction().commit();
         } catch (Exception ex) {
             ex.getMessage();
         }
@@ -63,10 +64,10 @@ public class TasksDao {
             Tasks task = new Tasks();
             task.setTaskId(taskId);
             session.delete(task);
+            return true;
         } catch (Exception ex) {
             return false;
         }
-        return true;
     }
 
 }

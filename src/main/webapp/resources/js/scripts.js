@@ -17,12 +17,13 @@ $(document).ready(function () {
 
     $('#taskTable').on('click', '.cor', function () {
         var obj = new Object();
-        var taskRow = $(this);
-        obj.name = taskRow.parent().parent().children('.tName').text();
-        obj.definition = taskRow.parent().parent().children('.tDef').text();
-        obj.taskDate = taskRow.parent().parent().children('.tDate').text();
-        obj.typeId = parseInt(taskRow.parent().parent().children('.tType').children('select').val());
-        obj.priorityId = parseInt(taskRow.parent().parent().children('.tPriority').children('select').val());
+        var taskSaveBtn = $(this);
+        obj.id =  parseInt(taskSaveBtn.parent().parent().attr('data-id'));
+        obj.name = taskSaveBtn.parent().parent().children('.tName').text();
+        obj.definition = taskSaveBtn.parent().parent().children('.tDef').text();
+        obj.taskDate = taskSaveBtn.parent().parent().children('.tDate').text();
+        obj.typeId = parseInt(taskSaveBtn.parent().parent().children('.tType').children('select').val());
+        obj.priorityId = parseInt(taskSaveBtn.parent().parent().children('.tPriority').children('select').val());
         var token = $("meta[name='_csrf']").attr("content");
         var header = $("meta[name='_csrf_header']").attr("content");
         var jsonData = JSON.stringify(obj);
@@ -36,8 +37,8 @@ $(document).ready(function () {
             },
             data: jsonData,
             success: function (data, status, resp) {
-                taskRow.parent().parent().attr('data-id', resp.getResponseHeader('taskId'));
-                taskRow.text('Редактировать');
+                taskSaveBtn.parent().parent().attr('data-id', resp.getResponseHeader('taskId'));
+                taskSaveBtn.text('Редактировать');
                 alert('Задача сохранена');
             }
         })

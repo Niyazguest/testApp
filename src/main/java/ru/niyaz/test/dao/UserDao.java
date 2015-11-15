@@ -20,7 +20,7 @@ public class UserDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-    @Transactional(propagation = Propagation.MANDATORY)
+ //   @Transactional(propagation = Propagation.MANDATORY)
     public Long saveUser(User user) {
         Session session = sessionFactory.getCurrentSession();
         session.saveOrUpdate(user);
@@ -46,13 +46,17 @@ public class UserDao {
 
     public User getUser(String login) {
         User user = null;
+        Session session = null;
         try {
-            Session session = sessionFactory.openSession();
+            session = sessionFactory.openSession();
             Criteria userCriteria = session.createCriteria(User.class);
             userCriteria.add(Restrictions.eq("login", login));
             user = (User) userCriteria.uniqueResult();
         } catch (HibernateException ex) {
             return null;
+        } finally {
+            if (session != null)
+                session.close();
         }
         return user;
     }

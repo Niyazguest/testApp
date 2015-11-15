@@ -30,7 +30,7 @@ public class User {
         this.userId = userId;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     public List<Tasks> getTasks() {
         return tasks;
     }

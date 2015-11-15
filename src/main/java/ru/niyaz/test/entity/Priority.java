@@ -15,10 +15,6 @@ public class Priority {
     private String name;
     private List<Tasks> tasks;
 
-    public Priority() {
-        this.name = "";
-    }
-
     @Id
     @SequenceGenerator(name = "priority_seq", sequenceName = "priority_priority_id_seq", allocationSize = 0)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "priority_seq")
@@ -40,7 +36,7 @@ public class Priority {
         this.name = name;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "priority")
     public List<Tasks> getTasks() {
         return tasks;
     }

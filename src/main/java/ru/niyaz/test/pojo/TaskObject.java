@@ -6,11 +6,20 @@ package ru.niyaz.test.pojo;
  */
 public class TaskObject {
 
+    private Long id;
     private String name;
     private String definition;
     private String taskDate;
     private int priorityId;
     private int typeId;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public int getPriorityId() {
         return priorityId;

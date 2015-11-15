@@ -32,7 +32,7 @@ public class Tasks {
         this.taskId = taskId;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     public User getUser() {
         return user;
@@ -69,7 +69,7 @@ public class Tasks {
         this.definition = definition;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE})
     @JoinColumn(name = "priority")
     public Priority getPriority() {
         return priority;
@@ -79,7 +79,7 @@ public class Tasks {
         this.priority = priority;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE})
     @JoinColumn(name = "type")
     public Type getType() {
         return type;
