@@ -36,15 +36,6 @@ public class TasksService {
     private TasksDao tasksDao;
 
     @Autowired
-    private UserDao userDao;
-
-    @Autowired
-    private TypeDao typeDao;
-
-    @Autowired
-    private PriorityDao priorityDao;
-
-    @Autowired
     private SessionFactory sessionFactory;
 
     public List<TaskObject> loadTasksByUserName(String userName) {

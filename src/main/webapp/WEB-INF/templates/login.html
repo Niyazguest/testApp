@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Менеджер задач</title>
+    <link rel="stylesheet" th:href="@{/resources/css/style.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/resources/bootstrap-3.3.5-dist/css/bootstrap.min.css}" type="text/css"/>
+    <script th:src="@{/resources/bootstrap-3.3.5-dist/js/bootstrap.min.js}" type="text/javascript"></script>
+</head>
+<body>
+<div class="container">
+    <form class="form-signin" th:action="@{/login}" method="POST">
+        <h2 class="form-signin-heading">Вход</h2>
+        <input type="text" class="form-control" placeholder="Логин" name="j_username" th:required="${true}" th:autofocus="${true}"/>
+        <input type="password" class="form-control" placeholder="Пароль" name="j_password" th:required="${true}"/>
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+        <label class="checkbox">
+            <input type="checkbox" value="remember-me" name="_spring_security_remember_me"/> Запомнить меня
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Вход</button>
+    </form>
+    <button class="btn btn-lg btn-info reg" onclick="registrate()">Регистрация</button>
+</div>
+<script type="text/javascript" charset="utf-8">
+    function registrate() {
+        window.location="/testapp/toRegistration";
+    }
+</script>
+</body>
+</html>

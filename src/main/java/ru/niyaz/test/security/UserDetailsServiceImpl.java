@@ -36,12 +36,4 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return userDetails;
     }
 
-    public UserDao getUserDao() {
-        return userDao;
-    }
-
-    public void setUserDao(UserDao userDao) {
-        this.userDao = userDao;
-    }
-
 }

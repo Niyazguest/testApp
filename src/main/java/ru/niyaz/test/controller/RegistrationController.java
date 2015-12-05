@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.thymeleaf.context.WebContext;
 import ru.niyaz.test.security.UserDetailsImpl;
 import ru.niyaz.test.serivce.RegistrationService;
+import ru.niyaz.test.util.ThymeleafTemplateUtil;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -39,10 +41,6 @@ public class RegistrationController {
     @Autowired
     @Qualifier("authManager")
     private AuthenticationManager authenticationManager;
-
-    @Autowired
-    @Qualifier("userDetailsService")
-    private UserDetailsService userDetails;
 
     @RequestMapping(value = "registration", method = RequestMethod.POST)
     public void registration(HttpServletRequest request, HttpServletResponse response,
@@ -69,10 +67,14 @@ public class RegistrationController {
     }
 
     @RequestMapping(value = "toRegistration", method = RequestMethod.GET)
-    public ModelAndView toRegistration(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView model = new ModelAndView("registration");
-        model.addObject("resource_root", request.getContextPath() + "/resources");
-        return model;
+    public void toRegistration(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            response.setContentType("text/html;charset=UTF-8");
+            WebContext webContext = new WebContext(request, response, request.getSession().getServletContext());
+            ThymeleafTemplateUtil.getTemplateEngine().process("registration", webContext, response.getWriter());
+        } catch (Exception ex) {
+            return;
+        }
     }
 
 }

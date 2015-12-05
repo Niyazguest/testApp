@@ -1,6 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta th:name="_csrf" th:content="${_csrf.token}"/>
     <meta th:name="_csrf_header" th:content="${_csrf.headerName}"/>
     <title>Менеджер задач</title>
@@ -18,7 +19,6 @@
             </div>
             <a class="navbar-brand" href="#" onclick="$('#logout').submit()"
                style="color: #d4d4d4; position: relative; left: 90%;">Выйти</a>
-
             <form th:action="@{/logout}" id="logout" method="post" style="height: 5%; width: 5%">
                 <fieldset>
                     <input id="csrfField" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>

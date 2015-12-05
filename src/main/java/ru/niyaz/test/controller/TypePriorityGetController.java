@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 import ru.niyaz.test.dao.PriorityDao;
 import ru.niyaz.test.dao.TypeDao;
 import ru.niyaz.test.entity.Priority;

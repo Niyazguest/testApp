@@ -15,12 +15,11 @@ import ru.niyaz.test.entity.Tasks;
 import ru.niyaz.test.pojo.TaskObject;
 import ru.niyaz.test.security.UserDetailsImpl;
 import ru.niyaz.test.serivce.TasksService;
+import ru.niyaz.test.util.ThymeleafTemplateUtil;
 
 import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.List;
 
 /**
@@ -50,28 +49,24 @@ public class TasksListController {
                 user = ((UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
                 if (user == null)
                     servletContext.getRequestDispatcher("/login?error=true").forward(request, response);
-            } catch (ClassCastException ex) {
+            } catch (Exception ex) {
                 servletContext.getRequestDispatcher("/login?error=true").forward(request, response);
             }
-
-            List<TaskObject> tasksList = tasksService.loadTasksByUserName(user.getUsername());
             response.setContentType("text/html;charset=UTF-8");
-            ServletContextTemplateResolver servletContextTemplateResolver = new ServletContextTemplateResolver();
-            servletContextTemplateResolver.setTemplateMode("HTML5");
-            servletContextTemplateResolver.setPrefix("/WEB-INF/jsp/");
-            servletContextTemplateResolver.setSuffix(".html");
-            servletContextTemplateResolver.setCharacterEncoding("UTF-8");
-            TemplateEngine templateEngine = new TemplateEngine();
-            templateEngine.setTemplateResolver(servletContextTemplateResolver);
+            List<TaskObject> tasksList = tasksService.loadTasksByUserName(user.getUsername());
             WebContext webContext = new WebContext(request, response, servletContext);
             webContext.setVariable("userName", user.getName());
             webContext.setVariable("tasks", tasksList);
             webContext.setVariable("types", typeDao.getTypes());
             webContext.setVariable("priorities", priorityDao.getPriorities());
             webContext.setVariable("contextPath", request.getContextPath());
-            templateEngine.process("tasks", webContext, response.getWriter());
+            ThymeleafTemplateUtil.getTemplateEngine().process("tasks", webContext, response.getWriter());
         } catch (Exception ex) {
-            return;
+            try {
+                servletContext.getRequestDispatcher("/login?error=true").forward(request, response);
+            } catch (Exception ex2) {
+                return;
+            }
         }
     }
 }
