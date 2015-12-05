@@ -47,8 +47,14 @@ public class TasksService {
     @Autowired
     private SessionFactory sessionFactory;
 
-    public List<Tasks> loadTasksByUserName(String userName) {
-        return tasksDao.getTasksByUserName(userName);
+    public List<TaskObject> loadTasksByUserName(String userName) {
+        List<Tasks> tasksList = tasksDao.getTasksByUserName(userName);
+        List<TaskObject> taskObjects = new ArrayList<TaskObject>();
+        DateFormat dateFormat=new SimpleDateFormat("dd.MM.yyyy");
+        for(Tasks task : tasksList) {
+           taskObjects.add(new TaskObject(task.getTaskId(),task.getName(), task.getDefinition(),dateFormat.format(task.getTaskDate()),task.getPriority().getPriorityId(),task.getType().getTypeId()));
+        }
+        return taskObjects;
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
@@ -81,7 +87,7 @@ public class TasksService {
     }
 
     public Date parseDate(String dateString) {
-        DateFormat dateFormat = new SimpleDateFormat("dd.MM.yy");
+        DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
         Date date = null;
         try {
             date = new Date(dateFormat.parse(dateString).getTime());

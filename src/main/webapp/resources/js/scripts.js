@@ -7,7 +7,7 @@ $(document).ready(function () {
             return;
         var num = parseInt($(this).parent().attr('data-num'));
         var elem = $(this);
-        $(this).replaceWith('<input id="curInput" type="text" style="height: 100px; width: 200px; z-index: 50;"/>');
+        $(this).replaceWith('<input id="curInput" type="text" style="z-index: 50;"/>');
         $('#curInput').css('height', elem.height().toString() + 'px');
         $('#curInput').css('width', '100%');
         $('#curInput').dblclick(function () {
@@ -18,7 +18,7 @@ $(document).ready(function () {
     $('#taskTable').on('click', '.cor', function () {
         var obj = new Object();
         var taskSaveBtn = $(this);
-        obj.id =  parseInt(taskSaveBtn.parent().parent().attr('data-id'));
+        obj.id = parseInt(taskSaveBtn.parent().parent().attr('data-id'));
         obj.name = taskSaveBtn.parent().parent().children('.tName').text();
         obj.definition = taskSaveBtn.parent().parent().children('.tDef').text();
         obj.taskDate = taskSaveBtn.parent().parent().children('.tDate').text();

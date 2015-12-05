@@ -6,9 +6,13 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.context.WebContext;
+import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 import ru.niyaz.test.dao.PriorityDao;
 import ru.niyaz.test.dao.TypeDao;
 import ru.niyaz.test.entity.Tasks;
+import ru.niyaz.test.pojo.TaskObject;
 import ru.niyaz.test.security.UserDetailsImpl;
 import ru.niyaz.test.serivce.TasksService;
 
@@ -50,17 +54,24 @@ public class TasksListController {
                 servletContext.getRequestDispatcher("/login?error=true").forward(request, response);
             }
 
-            List<Tasks> tasksList = tasksService.loadTasksByUserName(user.getUsername());
-            servletContext.setAttribute("userName", user.getName());
-            servletContext.setAttribute("tasks", tasksList);
-            servletContext.setAttribute("types", typeDao.getTypes());
-            servletContext.setAttribute("priorities", priorityDao.getPriorities());
-            servletContext.getRequestDispatcher("/tasks.jsp").forward(request, response);
-
-        } catch (ServletException ex) {
-
-        } catch (IOException ex) {
-
+            List<TaskObject> tasksList = tasksService.loadTasksByUserName(user.getUsername());
+            response.setContentType("text/html;charset=UTF-8");
+            ServletContextTemplateResolver servletContextTemplateResolver = new ServletContextTemplateResolver();
+            servletContextTemplateResolver.setTemplateMode("HTML5");
+            servletContextTemplateResolver.setPrefix("/WEB-INF/jsp/");
+            servletContextTemplateResolver.setSuffix(".html");
+            servletContextTemplateResolver.setCharacterEncoding("UTF-8");
+            TemplateEngine templateEngine = new TemplateEngine();
+            templateEngine.setTemplateResolver(servletContextTemplateResolver);
+            WebContext webContext = new WebContext(request, response, servletContext);
+            webContext.setVariable("userName", user.getName());
+            webContext.setVariable("tasks", tasksList);
+            webContext.setVariable("types", typeDao.getTypes());
+            webContext.setVariable("priorities", priorityDao.getPriorities());
+            webContext.setVariable("contextPath", request.getContextPath());
+            templateEngine.process("tasks", webContext, response.getWriter());
+        } catch (Exception ex) {
+            return;
         }
     }
 }

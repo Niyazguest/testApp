@@ -10,8 +10,21 @@ public class TaskObject {
     private String name;
     private String definition;
     private String taskDate;
-    private int priorityId;
-    private int typeId;
+    private Long priorityId;
+    private Long typeId;
+
+    public TaskObject() {
+
+    }
+
+    public TaskObject(Long id, String name, String definition, String taskDate, Long priorityId, Long typeId) {
+        this.id = id;
+        this.name = name;
+        this.definition = definition;
+        this.taskDate = taskDate;
+        this.priorityId = priorityId;
+        this.typeId = typeId;
+    }
 
     public Long getId() {
         return id;
@@ -21,11 +34,11 @@ public class TaskObject {
         this.id = id;
     }
 
-    public int getPriorityId() {
+    public Long getPriorityId() {
         return priorityId;
     }
 
-    public void setPriorityId(int priorityId) {
+    public void setPriorityId(Long priorityId) {
         this.priorityId = priorityId;
     }
 
@@ -53,11 +66,11 @@ public class TaskObject {
         this.name = name;
     }
 
-    public int getTypeId() {
+    public Long getTypeId() {
         return typeId;
     }
 
-    public void setTypeId(int typeId) {
+    public void setTypeId(Long typeId) {
         this.typeId = typeId;
     }
 
